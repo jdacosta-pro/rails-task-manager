@@ -1,0 +1,21 @@
+<h1>New task</h1>
+
+<%= form_with model: @task, url: tasks_path, method: :post do |f| %>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :details %><br>
+    <%= f.text_area :details %>
+  </div>
+
+  <%# On peut laisser completed caché ou non coché, par défaut false %>
+
+  <div>
+    <%= f.submit "Create task" %>
+  </div>
+<% end %>
+
+<%= link_to "Back to list", tasks_path %>
